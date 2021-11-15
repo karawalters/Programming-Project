@@ -22,10 +22,10 @@ Storing data in a file? Consider storing books and users
 
 
 
-11-17 functionality of classes
+// 11-17 functionality of classes
 
-11-24 complete 50%
+// 11-24 complete 50%
 
-11-30 complete 100%
+// 11-30 complete 100%
 
-12-1 to 12-8 bugs and compilation
+// 12-1 to 12-8 bugs and compilation
