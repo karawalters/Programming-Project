@@ -15,10 +15,16 @@ Weekly- Wednesday’s 6pm
 
 Due: December 10
 
-GUI- organize with tabs- users, books, transactions
+GUI- organize with tabs-accounts, books, library
+Account Tab- functionality of interface will be such that a list of accounts will be displayed
+A user of the interface can select an account and see a list of books that an account has reserved 
+A user can select a book with a maximum of 5 books selected
+A user can also return a book
+Book Tab - functionality of interface will be such that a list of books will be displayed as reseved or available
+Libray Tab - A statement of all accounts and/or books   
 
-When click on user can see existing users and select user 
-Storing data in a file? Consider storing books and users 
+
+All classes will store data with a read/write file  
 
 
 
