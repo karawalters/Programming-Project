@@ -6,11 +6,13 @@ public class Book /*implements java.io.Serializable*/ {
 
 	String bookName;
 	String authorName;
+	String available;
 	int volumeNumber;
 	
-	public Book(String bName, String aName, int vNum) {
+	public Book(String bName, String aName, String avail, int vNum) {
 		String bookName = bName;
 		String authorName = aName;
+		String available = avail;
 		int volumeNumber = vNum;
 	}
 	
@@ -37,5 +39,13 @@ public class Book /*implements java.io.Serializable*/ {
 	
 	public int getVolumeNumber() {
 		return volumeNumber;
+	}
+	
+	public void setAvailable(String avail) {
+		this.available = avail;
+	}
+	
+	public String getavailable() {
+		return available;
 	}
 }
