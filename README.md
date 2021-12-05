@@ -25,7 +25,7 @@ GUI- organize with tabs-accounts, books, library
 
 	A user can also return a book
 
-	Book Tab - functionality of interface will be such that a list of books will be displayed as reseved or available
+	Book Tab - functionality of interface will be such that a list of books will be displayed 
 
 	Libray Tab - A statement of all accounts and/or books   
 
