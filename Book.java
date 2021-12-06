@@ -1,8 +1,13 @@
 package library;
 
-import java.io.*;
+import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.Writer;
+import java.io.FileReader;
+import java.util.Scanner;
 
-public class Book {//implements java.io.Serializable {
+
+public class Book{
 
 	public String bookName;
 	public String authorName;
@@ -49,6 +54,26 @@ public class Book {//implements java.io.Serializable {
 		return available;
 	}
 	
+	public static Book addBook () {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("What is the name of the book?");
+		String bName = input.nextLine();
+		
+		System.out.println("What is the authors name?");
+		String aName = input.nextLine();
+		
+		System.out.println("Is the book available? yes or no");
+		String avail = input.nextLine();
+		
+		System.out.println("What volume of book is it?");
+		int vNum = input.nextInt();
+		
+		return new Book(bName, aName, avail, vNum);
+		
+		
+	}
+	
 	Book book1 = new Book("Harry Potter", "J.K. Rowling", "Yes", 1);
 	Book book2 = new Book("Harry Potter", "J.K. Rowling", "No", 2);
 	Book book3 = new Book("Harry Potter", "J.K. Rowling", "Yes", 3);
@@ -56,10 +81,6 @@ public class Book {//implements java.io.Serializable {
 	Book book5 = new Book("Harry Potter", "J.K. Rowling", "No", 5);
 	Book book6 = new Book("Harry Potter", "J.K. Rowling", "Yes", 6);
 	Book book7 = new Book("Harry Potter", "J.K. Rowling", "No", 7);
-	
-	/*public String getAll() {
-		return 
-	}*/
 	
 	
 }
