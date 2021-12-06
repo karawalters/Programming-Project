@@ -19,9 +19,9 @@ GUI- organize with tabs-accounts, books, library
 
 	Account Tab- functionality of interface will be such that a list of accounts will be displayed
 
-	A user of the interface can select an account and see a list of books that an account has reserved 
+	A user of the interface can select an account and see a number of books the account has
 
-	A user can select a book with a maximum of 5 books selected
+	A user can select a maximum of 5 books, if a book returned then a user is able to check out another book
 
 	A user can also return a book
 
