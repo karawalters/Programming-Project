@@ -69,18 +69,11 @@ public class Book{
 		System.out.println("What volume of book is it?");
 		int vNum = input.nextInt();
 		
-		return new Book(bName, aName, avail, vNum);
-		
-		
+		return new Book(bName, aName, avail, vNum);	
 	}
 	
-	Book book1 = new Book("Harry Potter", "J.K. Rowling", "Yes", 1);
-	Book book2 = new Book("Harry Potter", "J.K. Rowling", "No", 2);
-	Book book3 = new Book("Harry Potter", "J.K. Rowling", "Yes", 3);
-	Book book4 = new Book("Harry Potter", "J.K. Rowling", "Yes",  4);
-	Book book5 = new Book("Harry Potter", "J.K. Rowling", "No", 5);
-	Book book6 = new Book("Harry Potter", "J.K. Rowling", "Yes", 6);
-	Book book7 = new Book("Harry Potter", "J.K. Rowling", "No", 7);
-	
-	
+	public String toString(){	
+		return "\nBook Name: " + bookName + "\nAuthor: " + authorName + 
+                "\nBook Availability: " + available + "\nVolume: " + volumeNumber;
+	}
 }
