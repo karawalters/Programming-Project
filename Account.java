@@ -17,88 +17,69 @@ public class Account {
     
 
     //instance variables
-    public String name;
-    public String accountNumb;
-    public int bookCount;
-    public int returnCount;
+    public String accountName;
+    public String accountNumber;
+    public int booksCheckedOut;
+    public int booksReturned;
 
     //Default constructor
     public Account() {
-        bookCount = 0;
-        returnCount = 0;
+        booksCheckedOut = 0;
+        booksReturned = 0;
     }
 
     //Non-default constructor
-    public Account(String name, String accountNumb, int bookCount, int returnCount) {
-        this.name = name;
-        this.accountNumb = accountNumb;
-        this.bookCount = bookCount;
-        this.returnCount = returnCount;
+    public Account(String accountName, String accountNumber, int booksCheckedOut, int booksReturned) {
+        this.accountName = accountName;
+        this.accountNumber = accountNumber;
+        this.booksCheckedOut = booksCheckedOut;
+        this.booksReturned = booksReturned;
     }
 
     //Set method for Account Holder name
     public void setName(String name) {
-        this.name = name;
+        this.accountName = accountName;
     }
 
     //Get method for Account Holder name
     public String getName() {
-        return name;
+        return accountName;
     }
 
     //Set method for Account number
-    public void setAccountNumber(String accountNumb) {
-        this.accountNumb = accountNumb;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     //Get method for Account number
     public String getAccountNumber() {
-        return accountNumb;
+        return accountNumber;
     }
 
     //Set method for checked out book count
-    public void setBookCount() {
-        this.bookCount = bookCount;
+    public void setBooksCheckedOut() {
+        this.booksCheckedOut = booksCheckedOut;
     }
 
     //Get method for checked out book count
-    public int getBookCount() {
-        return bookCount;
+    public int getBooksCheckedOut() {
+        return booksCheckedOut;
     }
 
     //Set method for book return count
-    public void setReturnCount() {
-        this.returnCount = returnCount;
+    public void setBooksReturned() {
+        this.booksReturned = booksReturned;
     }
 
     //Get method for book return book
-    public int getReturnCount() {
-        return returnCount;
-    }
-
-    public void read(String fname) {
-        File x = new File(fname);
-        try (Scanner scan = new Scanner(x)) {
-            name = scan.nextLine();
-            accountNumb = scan.nextLine();
-            bookCount = scan.nextInt();
-            returnCount = scan.nextInt();
-        } catch (Exception y) {
-            y.printStackTrace();
-        }
-    }
-
-    public void read(Scanner scan) {
-        name = scan.nextLine();
-        accountNumb = scan.nextLine();
-        bookCount = scan.nextInt();
-        returnCount = scan.nextInt();
+    public int getBooksReturned() {
+        return booksReturned;
     }
     
     public void write(String fname) {
         try (FileWriter x = new FileWriter(fname)) {
-            x.write(name + "\n" + accountNumb + "\n" + bookCount + "\n" + 
-                    returnCount + "\n");
+            x.write(accountName + "\n" + accountNumber + "\n" + booksCheckedOut + "\n" + 
+                    booksReturned + "\n");
         } catch (Exception y) {
             y.printStackTrace();
         }
@@ -106,42 +87,66 @@ public class Account {
     
     public void write(FileWriter x) {
         try {
-            x.write(name + "\n" + accountNumb + "\n" + bookCount + "\n" + 
-                    returnCount + "\n");
+            x.write(accountName + "\n" + accountNumber + "\n" + booksCheckedOut + "\n" + 
+                    booksReturned + "\n");
         }
         catch (Exception y) {
             y.printStackTrace();
         }
     }
   
+    public void checkoutBook(){
+        if(booksCheckedOut >= 5){
+            System.out.println("Please return at least one book before checking out more.");
+        }
+        else {
+            System.out.println("Enjoy your book!");
+            booksCheckedOut +=1;
+            System.out.println();
+        }
+    }
+    
+    public void returnBook(){
+        booksCheckedOut -= 1;
+        booksReturned += 1;
+        System.out.println();
+    }
+    
     //Adds a new account
-    public static Account addAccount() {
+    public Account addAccount() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the first and last name of the account holder.");
         String name = sc.nextLine();
         System.out.println("Please enter the account number for the account.");
         String accountNumber = sc.nextLine();
-        int bookCount = 0;
-        int returnCount = 0;
+        int booksCheckedOut = 0;
+        int booksReturned = 0;
         System.out.println();
-        return new Account(name, accountNumber, bookCount, returnCount);
+        return new Account(accountName, accountNumber, booksCheckedOut, booksReturned);
     }
     
     @Override
     //Prints account holder information
     public String toString(){
-        return "\nName: " + name + "\nAccount Number: " + accountNumb + 
-                "\nBooks Checked Out: " + bookCount + "\nBooks returned: " + 
-                returnCount;
+        return "\nName: " + accountName + "\nAccount Number: " + accountNumber + 
+                "\nBooks Checked Out: " + booksCheckedOut + "\nBooks returned: " + 
+                booksReturned;
     }
 }
-
+        //Adds an account to ArrayList
+        //public static final ArrayList<Account> aList = new ArrayList<Account>();
+        
         //Account john = new Account("John Doe", "98765", 4, 3);
         //Account jane = new Account("Jane Doe", "12345", 2, 4);
         //Account robert = new Account("Robert Jones", "01397", 3, 3);
         //Account kent = new Account("Kent Roy", "24315", 5, 1);
         //Account beth = new Account("Beth Page", "65214", 5, 5);
+
+        //for (int x = 0; x < aList.size(); x++){
+            //System.out.println(aList.get(x));
+        //}
         
+
         //System.out.println("John's Account: " + john + "\n");
         //System.out.println("Jane's Account: " + jane + "\n");
         //System.out.println("Robert's Account: " + robert + "\n");
