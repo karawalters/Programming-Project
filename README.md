@@ -27,7 +27,7 @@ GUI- organize with tabs-accounts, books, library
 
 	Book Tab - functionality of interface will be such that a list of books will be displayed 
 
-	Libray Tab - A statement of all accounts and/or books   
+	Library Tab - A statement of all accounts and/or books   
 
 
 	All classes will store data with a read/write file  
