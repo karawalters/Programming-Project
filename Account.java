@@ -1,4 +1,4 @@
-//C211 Final Project - Matthew Stauder
+//C211 Final Project - Team One - Matthew Stauder - December 10, 2021
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,10 +17,17 @@ public class Account {
     
 
     //instance variables
+    public static final ArrayList<Account> aList = new ArrayList<Account>();
     public String accountName;
     public String accountNumber;
     public int booksCheckedOut;
     public int booksReturned;
+    
+    Account john = new Account("John Doe", "98765", 4, 3);
+    Account jane = new Account("Jane Doe", "12345", 2, 4);
+    Account robert = new Account("Robert Jones", "01397", 3, 3);
+    Account kent = new Account("Kent Roy", "24315", 5, 1);
+    Account beth = new Account("Beth Page", "65214", 5, 5);
 
     //Default constructor
     public Account() {
@@ -76,25 +83,49 @@ public class Account {
         return booksReturned;
     }
     
-    public void write(String fname) {
-        try (FileWriter x = new FileWriter(fname)) {
-            x.write(accountName + "\n" + accountNumber + "\n" + booksCheckedOut + "\n" + 
-                    booksReturned + "\n");
-        } catch (Exception y) {
-            y.printStackTrace();
+    public void Account(String filename)
+    {
+        
+        try (FileWriter f = new FileWriter(filename))
+        {
+            for (Account b: aList)
+                f.write(this.accountName + "\n" + this.accountNumber + "\n" + this.booksCheckedOut + "\n" + this.booksReturned + "\n");
         }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }    
+             
     }
     
-    public void write(FileWriter x) {
-        try {
-            x.write(accountName + "\n" + accountNumber + "\n" + booksCheckedOut + "\n" + 
-                    booksReturned + "\n");
+    public void writeAccounts(FileWriter f)
+    {
+        try
+        {
+            for (Account a: aList)
+                f.write(this.accountName + "\n" + this.accountNumber + "\n" + this.booksCheckedOut + "\n" + this.booksReturned + "\n");
+              
         }
-        catch (Exception y) {
-            y.printStackTrace();
-        }
+     catch (Exception e)
+        {
+            e.printStackTrace();
+        } 
     }
-  
+    public void writeAccounts()
+    {
+        try
+        {
+            for (Account a: aList)
+                System.out.print(this.accountName + "\n" + this.accountNumber + "\n" + this.booksCheckedOut + "\n" + this.booksReturned + "\n");
+              
+        }
+     catch (Exception e)
+        {
+            e.printStackTrace();
+        } 
+    }
+    
+    //Allows user to checkout a book if they have no more than 5 books already checked out.
     public void checkoutBook(){
         if(booksCheckedOut >= 5){
             System.out.println("Please return at least one book before checking out more.");
@@ -106,6 +137,7 @@ public class Account {
         }
     }
     
+    //Allows a user to return a book that is checked out.
     public void returnBook(){
         booksCheckedOut -= 1;
         booksReturned += 1;
@@ -134,7 +166,6 @@ public class Account {
     }
 }
         //Adds an account to ArrayList
-        //public static final ArrayList<Account> aList = new ArrayList<Account>();
         
         //Account john = new Account("John Doe", "98765", 4, 3);
         //Account jane = new Account("Jane Doe", "12345", 2, 4);
