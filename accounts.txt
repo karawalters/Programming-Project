@@ -1,0 +1,20 @@
+John Doe
+98765
+4
+3
+Jane Doe 
+12345
+2 
+4
+Robert Jones
+01397
+3
+3
+Kent Roy
+24315
+5 
+1
+Beth Page
+65214 
+5
+5
