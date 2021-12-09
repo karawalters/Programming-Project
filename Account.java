@@ -17,7 +17,7 @@ public class Account {
     
 
     //instance variables
-    public static final ArrayList<Account> aList = new ArrayList<Account>();
+    public static final ArrayList<Account> accounts = new ArrayList<Account>();
     public String accountName;
     public String accountNumber;
     public int booksCheckedOut;
@@ -88,7 +88,7 @@ public class Account {
         
         try (FileWriter f = new FileWriter(filename))
         {
-            for (Account b: aList)
+            for (Account b: accounts)
                 f.write(this.accountName + "\n" + this.accountNumber + "\n" + this.booksCheckedOut + "\n" + this.booksReturned + "\n");
         }
         catch (Exception e)
@@ -102,7 +102,7 @@ public class Account {
     {
         try
         {
-            for (Account a: aList)
+            for (Account a: accounts)
                 f.write(this.accountName + "\n" + this.accountNumber + "\n" + this.booksCheckedOut + "\n" + this.booksReturned + "\n");
               
         }
@@ -115,7 +115,7 @@ public class Account {
     {
         try
         {
-            for (Account a: aList)
+            for (Account a: accounts)
                 System.out.print(this.accountName + "\n" + this.accountNumber + "\n" + this.booksCheckedOut + "\n" + this.booksReturned + "\n");
               
         }
