@@ -9,7 +9,9 @@ Account-Matt (write or read data from a file)
 
 Main-Kara
 
-Readme file- GitHub (Kara)
+Readme file- GitHub Kara
+
+JAR file- Kara
 
 Weekly- Wednesday’s 6pm
 
